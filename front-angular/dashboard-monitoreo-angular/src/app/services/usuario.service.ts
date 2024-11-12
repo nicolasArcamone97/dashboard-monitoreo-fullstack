@@ -8,11 +8,11 @@ import { environment } from '../enviroment';
   providedIn: 'root'
 })
 export class UsuarioService {
-                  
-  private baseUrl = environment.baseUrl
+
+  private baseUrl = environment.backendUrl
 
   private userKey = 'user';
-  
+
   constructor(private httpCliente:HttpClient) { }
 
   // metodos de localStorage para simular login
@@ -36,7 +36,7 @@ export class UsuarioService {
 
 
 
-  // metodos del backend 
+  // metodos del backend
 
   obtenerUsuario(usuarioId:number):Observable<any>{
     return this.httpCliente.get<any>(`${this.baseUrl}usuario/${usuarioId}`)

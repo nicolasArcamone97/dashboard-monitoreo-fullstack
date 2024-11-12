@@ -8,7 +8,7 @@ import { environment } from '../enviroment';
 })
 export class PlantaService {
 
-  private baseUrl = environment.baseUrl
+  private baseUrl = environment.backendUrl
 
   constructor(private httpCliente:HttpClient) { }
 
