@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row row-principal justify-content-center h-100">
+    <!-- Columna de texto -->
+    <div class="col-md-6 col-12 col-text d-flex flex-column justify-content-center align-items-center text-center mb-4 mb-md-0">
+      <div class="col-titulo mb-4">
+        <h3>Iniciar sesión</h3>
+        <p>Nos alegra tenerte de vuelta y estamos listos para atender tus necesidades. Inicia sesión y continúa aprovechando al máximo nuestra plataforma.</p>
+      </div>
+
+      <div class="col-detalle">
+        <div class="titulo d-flex align-items-center mb-3">
+          <div class="icon me-2">
+            <img src="https://i.postimg.cc/jd14YjjZ/star-inside-circle.png" alt="">
+          </div>
+          <div class="descripcion">
+            <h4>Monitoreo integra</h4>
+            <p>Administra, monitorea múltiples plantas de forma centralizada</p>
+          </div>
+        </div>
+
+        <div class="titulo d-flex align-items-center mb-3">
+          <div class="icon me-2">
+            <img src="https://i.postimg.cc/jd14YjjZ/star-inside-circle.png" alt="">
+          </div>
+          <div class="descripcion">
+            <h4>Notificaciones en tiempo real</h4>
+            <p>Recibe notificaciones en tiempo real sobre las mediciones</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna de formulario -->
+    <div class="col-md-6 col-12 col-form-login d-flex justify-content-center align-items-center">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="w-75">
+        <div class="col col-titulo-form text-center mb-4">
+          <h1>Portal de monitoreo</h1>
+          <h2>Iniciar sesión</h2>
+        </div>
+
+        <!-- Input Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+          <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="text-danger">
+            <div *ngIf="loginForm.controls['email'].hasError('required')">El email es obligatorio.</div>
+            <div *ngIf="loginForm.controls['email'].hasError('email')">Por favor ingrese un email válido.</div>
+          </div>
+        </div>
+
+        <!-- Input Contraseña -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="password" formControlName="password">
+          <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="text-danger">
+            <div *ngIf="loginForm.controls['password'].hasError('required')">La contraseña es obligatoria.</div>
+            <div *ngIf="loginForm.controls['password'].hasError('minlength')">La contraseña debe tener al menos 8 caracteres.</div>
+          </div>
+        </div>
+
+        <!-- Enlace y botón -->
+        <div class="btn-login d-flex justify-content-between align-items-center mb-4">
+          <a routerLink="/register" href="#">¿No estás registrado?</a>
+          <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar sesión</button>
+        </div>
+
+        <!-- ReCaptcha y condiciones -->
+        <div class="col col-recaptcha">
+          <p>Protegido por reCAPTCHA y sujeto a la Política de Privacidad y Condiciones.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

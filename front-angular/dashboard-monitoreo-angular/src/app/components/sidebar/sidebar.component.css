@@ -1,0 +1,20 @@
+
+
+.nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-link i {
+    color: #9e9ea1;
+}
+
+
+i {
+    color: gray;
+}
+
+i:active,i:focus {
+    color: black !important;
+}

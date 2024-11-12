@@ -1,0 +1,29 @@
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Crear planta</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nombre planta</label>
+              <input type="text" class="form-control" placeholder="Ingrese nombre" id="exampleInputEmail1" aria-describedby="NombreHelp" 
+                     name="nombre" [(ngModel)]="nombreIngresado">
+            </div>
+            <div class="mb-3">
+              <select class="form-select" aria-label="Default select example" name="pais" [(ngModel)]="paisSelected" (change)="obtenerPais(paisSelected)">
+                <option *ngFor="let pais of listPaises" [value]="pais.cca3">{{ pais.name.common}}</option>  
+              </select>
+              
+            </div>            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-crear" (click)="onSubmit()" >Cear</button>
+        </div>
+      </div>
+    </div>
+  </div>

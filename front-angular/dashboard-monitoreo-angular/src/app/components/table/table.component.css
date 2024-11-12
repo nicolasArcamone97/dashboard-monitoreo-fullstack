@@ -1,0 +1,82 @@
+.container-table {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFF;
+    overflow: hidden;
+    border-radius: 20px;
+    height: max-content;
+}
+.create-plant {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 80px;
+    gap: 20px;
+}
+
+.create-plant .btn {
+    border: 1px solid #B0CAD1
+}
+
+
+
+.table th {
+    font-weight: 400;
+    color: #B0CAD1;
+}
+
+.table td {
+    font-weight: 300;
+}
+
+
+
+/*  */
+
+.dropdown-toggle::after {
+    display: none; 
+  }
+  
+.btn-light {
+    border: none; 
+    background-color: transparent; 
+}
+  
+
+.dropdown-item:hover {
+    background-color: #33a3aa;
+}
+
+
+
+
+/* modal template edit */
+.form-label {
+    font-size: 15px;
+    font-weight: 400;
+    color: #7a7a7a;
+}
+
+input::placeholder {
+    color: #9e9ea1;
+    opacity: 1; 
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-cancelar {
+    border-radius: 10px;
+    border: 1px solid #33a3aa;
+    color: #33a3aa;
+    width: 100px;
+}
+
+.btn-crear {
+    border-radius: 10px;
+    background-color: #33a3aa;
+    color: #FFFF;
+    width: 100px;
+}

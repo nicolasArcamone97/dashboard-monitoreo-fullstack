@@ -1,0 +1,162 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+
+.row-principal {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.548);
+    background: linear-gradient(rgb(57, 215, 226, .84), rgb(8, 69, 73, .95)), url('https://i.postimg.cc/Fs92KCG6/pixelcut-export-1.png') no-repeat left center;
+    background-size: cover;
+}
+
+
+.col-text {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.548);
+}
+
+.col-text .col-titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFF;
+}
+
+.col-titulo p {
+    font-weight: 200;
+    font-size: clamp(12px, 1.5vw, 18px);
+    width: 80%;
+}
+
+.col-titulo h3 {
+    font-weight: 500;
+    font-size: clamp(30px, 1.5vw, 40px);
+    color: #FFFF;
+    
+}
+
+.col-text .col-detalle p {
+    
+    font-size: clamp(12px, 1.5vw, 18px);
+}
+
+.col-text .col-detalle .titulo {
+    gap: 10px;
+    color: #FFFF;
+}
+.col-detalle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+}
+
+.descripcion h4 {
+    font-weight: 500;
+    font-size: clamp(12px,1.5vw,20px)
+}
+
+.descripcion p {
+    font-weight: 200;
+    font-size: 12px;
+}
+
+.icon {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 20%;
+}
+
+.icon img {
+    height: 20px;
+}
+
+/* Columna de formulario */
+.col-form-login {
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    background-color: #FFFF;
+}
+
+.col-titulo-form h1 {
+    font-size: clamp(15px, 36px);
+}
+
+.col-titulo-form h2 {
+    font-size: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%; 
+}
+
+.form-control {
+    width: 100%;
+}
+
+.form-label {
+    font-size: 14px;
+    color: gray;
+}
+
+.btn-login {
+    width: 100%;
+}
+
+.btn-login a {
+    font-size: 14px;
+    color: #47464A;
+    text-decoration: none;
+}
+
+.btn {
+    width: 50%; 
+    height: 50px;
+    border-radius: 12px #33A3AA ;
+    color: #FFFF;
+    border: none;
+    background-color: #33A3AA;
+}
+
+.btn:hover {
+    background-color: #33A3AA;;
+}
+
+.btn:active {
+    color: #FFFF;
+}
+
+.col-recaptcha {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #84818A;
+}
+
+
+
+
+
+
+
+/* media queries */
+@media (max-width: 755px) { 
+
+    .col-text .col-titulo {
+        margin-top: 1em;
+    }
+
+    .col-titulo-form h1 {
+        margin-top: 1em;
+    }
+}

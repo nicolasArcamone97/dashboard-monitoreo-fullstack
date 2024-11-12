@@ -1,0 +1,20 @@
+<div class="container my-4">
+    <div class="row d-flex aling-items-center justify-content-center  row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <div class="col" *ngFor="let card of cardsPlantas">
+            <div class="card">
+                <div class="card-body d-flex">
+                    <div class="text-card">
+                        <p class="card-text">{{card.titulo}}</p>
+                        <p class="card-title">{{card.value}}</p>
+                    </div>
+                    <div class="icon-card">
+                        <div [ngClass]="card.claseIcono" >
+                            <i  class="bi" [ngClass]="card.icono"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+

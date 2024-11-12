@@ -1,0 +1,29 @@
+<div class="container my-4">
+    <div class="row  d-flex aling-items-center justify-content-center  row-cols-1  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        <div class="col "  *ngFor="let card of cardsStatus">
+            <div class="card aling-items-center justify-content-center ">
+                <div class="card-body card-inf">
+                    <div class="title-list mb-3 flex-column">
+                        <p class="card-title">{{ card.title }}</p>
+                        <div class="text-list d-flex flex-row">
+                            <div class="circle small-circle me-2">
+                                <i class="bi bi-check-lg"></i> <span>{{ card.values[0] }}</span>
+                            </div>
+                            <div class="circle-yell small-circle me-2">
+                                <i class="bi bi-exclamation-lg"></i> <span>{{ card.values[1] }}</span>
+                            </div>
+                            <div class="circle-red small-circle">
+                                <i class="bi bi-exclamation-triangle"></i> <span>{{ card.values[2] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon-inf">
+                        <div class="circle-icon">
+                            <i class="material-icons" style="font-size: 2rem;">{{ card.icon }}</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

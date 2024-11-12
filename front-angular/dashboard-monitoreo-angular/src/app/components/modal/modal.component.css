@@ -1,0 +1,21 @@
+
+
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-cancelar {
+    border-radius: 10px;
+    border: 1px solid #33a3aa;
+    color: #33a3aa;
+    width: 100px;
+}
+
+.btn-crear {
+    border-radius: 10px;
+    background-color: #33a3aa;
+    color: #FFFF;
+    width: 100px;
+}

@@ -2,7 +2,7 @@ services:
   dash_monitoreo-angular:
     container_name: dash_monitoreo-angular-container
     image: dash_monitoreo-angular
-    build: ./angular/dashboard-monitoreo-angular
+    build: ./front-angular/dashboard-monitoreo-angular
     ports:
       - "80:80"
     depends_on:

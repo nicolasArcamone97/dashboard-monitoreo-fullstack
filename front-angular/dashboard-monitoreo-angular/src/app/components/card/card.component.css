@@ -1,0 +1,90 @@
+.card {
+    height: 90px;
+    max-width: 250px;
+    border-radius: 20px;
+}
+
+.text-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    min-height: 50px;
+    
+}
+
+.card .card-text {
+    font-size: 13px;
+    color: #9e9ea1;
+    
+}
+
+
+ /* cards */
+.card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: max-content;
+    border-radius: 30px;
+}
+
+
+.icon-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle, .circle-red , .circle-orange, .circle-yell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    background-color: #e9f1f4;
+}
+
+.circle-yell {
+    background-color: #fffacd
+}
+
+.circle-red {
+    background-color: #fbcbc0;
+}
+
+.circle-orange {
+    background-color: #fbe2ca;;
+}
+
+.bi-exclamation-lg {
+    font-size: 20px;
+    color: #fdcf57;
+}
+
+.bi-check-lg {
+    color: green;
+}
+
+.bi-exclamation-triangle {
+    color: red;
+}
+
+.bi-x-lg {
+    color: #f2a863 ;
+}
+
+
+
+
+
+
+@media (max-width: 1400px) {
+    .card {
+        transform: scale(0.9); /* Reducir el tamaño de la tarjeta al 90% */
+    }
+}
