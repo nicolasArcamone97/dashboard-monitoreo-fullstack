@@ -20,6 +20,6 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copia los archivos generados por Angular desde la etapa 'build'
 COPY --from=build /usr/src/app/dist/dashboard-monitoreo-angular/browser /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8000
 
 CMD ["nginx", "-g", "daemon off;"]
