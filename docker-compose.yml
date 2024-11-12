@@ -4,7 +4,7 @@ services:
     image: dash_monitoreo-angular
     build: ./front-angular/dashboard-monitoreo-angular
     ports:
-      - "8000:8000"
+      - "8081:80"
     depends_on:
         - dash_monitoreo
 
