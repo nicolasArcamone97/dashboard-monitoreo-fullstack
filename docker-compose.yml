@@ -1,0 +1,47 @@
+services:
+  dash_monitoreo-angular:
+    container_name: dash_monitoreo-angular-container
+    image: dash_monitoreo-angular
+    build: ./angular/dashboard-monitoreo-angular
+    ports:
+      - "80:80"
+    depends_on:
+        - dash_monitoreo
+
+  dash_monitoreo:
+    image: dash_monitoreo
+    container_name: dash_monitoreo-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - dash_monitoreo-network
+    depends_on:
+      - mysql_database
+    restart: always
+
+  mysql_database:
+    image: mysql:8.0.33
+    container_name: mysql_database
+    ports:
+      - "3307:3306"
+    networks:
+      - dash_monitoreo-network
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1997
+      MYSQL_DATABASE: dockerDB
+      MYSQL_USER: nico97
+      MYSQL_PASSWORD: 1111
+
+
+# Definir la red
+networks:
+  dash_monitoreo-network:
+
+# Definir el volumen
+volumes:
+  mysql-volume:

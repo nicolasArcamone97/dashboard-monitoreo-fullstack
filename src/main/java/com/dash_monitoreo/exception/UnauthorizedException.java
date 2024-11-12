@@ -1,0 +1,9 @@
+package com.dash_monitoreo.exception;
+
+
+public class UnauthorizedException  extends RuntimeException {
+
+    public UnauthorizedException(String message) {
+        super(message);
+    }
+}
