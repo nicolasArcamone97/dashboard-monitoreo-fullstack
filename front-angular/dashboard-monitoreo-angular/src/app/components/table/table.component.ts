@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { HttpErrorResponse } from '@angular/common/http';
+import { UsuarioService } from '../../services/usuario.service';
 
 
 
@@ -21,31 +22,32 @@ export class TableComponent implements OnInit{
 
   plantaSeleccionada?: any = {}
 
-  constructor(private plantaService:PlantaService){}
+  constructor(private plantaService:PlantaService,
+              private usuarioService:UsuarioService
+  ){}
 
 
   ngOnInit(): void{
-    this.obtenerPlantas()
+    this.obtenerPlantasUsuario()
     this.listPlantas
-    
-  }
-  
- 
-  
-  obtenerPlantas(){
-    this.plantaService.obtenerPlantas().subscribe( data => {
-      this.listPlantas = data;
-    }), (err: HttpErrorResponse) => {
-      console.error("Error al obtener plantas", err)
-    }
 
   }
-  
+
+
+
+  obtenerPlantasUsuario(){
+    const usuario = this.usuarioService.getUser()
+    this.usuarioService.obtenerUsuario(usuario.id).subscribe( (data) =>
+      this.listPlantas = data.plantas
+    )
+
+  }
+
 
 
   eliminarPlanta(plantaId:number) {
     this.plantaService.eliminarPlanta(plantaId).subscribe( (data) => {
-      this.obtenerPlantas()
+      this.obtenerPlantasUsuario()
     }), (err:HttpErrorResponse) => {
       console.log("Error al eliminar la planta",err)
     }
@@ -54,8 +56,9 @@ export class TableComponent implements OnInit{
 
 
   agregarPlanta(nuevaPlanta: any) {
-    this.plantaService.crearPlanta(nuevaPlanta).subscribe( () => {
-      this.obtenerPlantas()
+    const usuario = this.usuarioService.getUser()
+    this.usuarioService.crearPlanta(usuario.id,nuevaPlanta).subscribe( () => {
+      this.obtenerPlantasUsuario()
       Swal.fire({
         title: '¡Planta creada!',
         text: `La planta ${nuevaPlanta.nombre} en ${nuevaPlanta.pais} se ha creado correctamente.`,
@@ -83,8 +86,8 @@ export class TableComponent implements OnInit{
         confirmButtonColor: '#33a3aa',
         confirmButtonText: 'Aceptar'
       });
-      
-      this.obtenerPlantas()
+
+      this.obtenerPlantasUsuario()
     }), (err:HttpErrorResponse) => {
       console.log("Error al Actualizar la planta",err)
     }
@@ -104,7 +107,7 @@ export class TableComponent implements OnInit{
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.eliminarPlanta(planta.id); 
+        this.eliminarPlanta(planta.id);
         Swal.fire(
           'Eliminada',
           'La planta ha sido eliminada correctamente.',
@@ -113,8 +116,9 @@ export class TableComponent implements OnInit{
       }
     });
   }
-  
+
 
 
 }
+
 

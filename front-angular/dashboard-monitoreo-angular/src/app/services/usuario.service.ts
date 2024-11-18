@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, ObservedValueOf } from 'rxjs';
 import { environment } from '../enviroment';
 
 
@@ -50,7 +50,9 @@ export class UsuarioService {
     return this.httpCliente.post(`${this.baseUrl}usuario/login`,usuario)
   }
 
-
+  crearPlanta(usuarioId:any, planta:any): Observable<any> {
+    return this.httpCliente.post(`${this.baseUrl}usuario/${usuarioId}/planta`,planta)
+  }
 
 
 }

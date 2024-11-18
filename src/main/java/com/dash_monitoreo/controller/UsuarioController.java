@@ -1,5 +1,6 @@
 package com.dash_monitoreo.controller;
 import com.dash_monitoreo.dto.LoginDTO;
+import com.dash_monitoreo.dto.PlantaDTO;
 import com.dash_monitoreo.dto.UsuarioDTO;
 import com.dash_monitoreo.exception.ConflictException;
 import com.dash_monitoreo.exception.NotFoundException;
@@ -86,4 +87,19 @@ public class UsuarioController {
 
         return ResponseEntity.ok(Collections.singletonMap("user", usuario));
     }
+
+    @PostMapping("/{id}/planta")
+    public ResponseEntity<?> crearPlanta(@PathVariable Long id, @Valid @RequestBody PlantaDTO plantaDTO){
+        try {
+            usuarioService.crearPlanta(id, plantaDTO);
+            return ResponseEntity.ok(Collections.singletonMap("message", "Planta creada con éxito"));
+        } catch (NotFoundException ex) {
+            throw new NotFoundException("Usuario no encontrado con ID: " + id);
+        }
+    }
+
+
+
+
+
 }

@@ -2,6 +2,7 @@ package com.dash_monitoreo.service;
 
 
 import com.dash_monitoreo.dto.LoginDTO;
+import com.dash_monitoreo.dto.PlantaDTO;
 import com.dash_monitoreo.dto.UsuarioDTO;
 import com.dash_monitoreo.model.Usuario;
 
@@ -22,6 +23,10 @@ public interface IUsuarioService {
     public Usuario findByEmail(String email);
 
     public Usuario login(LoginDTO loginDTO);
+
+    public void crearPlanta(Long id, PlantaDTO plantaDTO);
+
+
 
 
 }

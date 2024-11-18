@@ -1,5 +1,6 @@
 package com.dash_monitoreo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +19,11 @@ public class Planta {
     private String pais;
 
     private String bandera;
+
+    @ManyToOne()
+    @JsonBackReference
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     private int cantLecturas;
 

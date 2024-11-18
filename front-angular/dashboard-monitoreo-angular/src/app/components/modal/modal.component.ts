@@ -20,7 +20,7 @@ export class ModalComponent {
   paisSelected?: any;       
   nombreIngresado: string = '';
   detallePais?:any
-
+  
   @Output() plantaEnviada = new EventEmitter<any>();
 
   constructor(private paisService: PaisService) {}

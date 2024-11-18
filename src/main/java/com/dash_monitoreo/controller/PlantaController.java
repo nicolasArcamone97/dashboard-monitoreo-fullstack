@@ -48,6 +48,9 @@ public class PlantaController {
         }
     }
 
+
+
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deletePlanta(@PathVariable Long id){
         try {

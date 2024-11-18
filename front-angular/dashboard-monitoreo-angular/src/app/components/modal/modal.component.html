@@ -16,7 +16,6 @@
               <select class="form-select" aria-label="Default select example" name="pais" [(ngModel)]="paisSelected" (change)="obtenerPais(paisSelected)">
                 <option *ngFor="let pais of listPaises" [value]="pais.cca3">{{ pais.name.common}}</option>  
               </select>
-              
             </div>            
           </form>
         </div>
